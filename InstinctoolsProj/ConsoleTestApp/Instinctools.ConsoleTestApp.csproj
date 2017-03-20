@@ -49,8 +49,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entity\Contexts\CarContext.cs" />
+    <Compile Include="Entity\Contexts\WorkersContext.cs" />
     <Compile Include="Entity\Entities\Worker.cs" />
+    <Compile Include="Migrations\201703201610116_removeCollection.cs" />
+    <Compile Include="Migrations\201703201610116_removeCollection.Designer.cs">
+      <DependentUpon>201703201610116_removeCollection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201703201611467_addCollection.cs" />
+    <Compile Include="Migrations\201703201611467_addCollection.Designer.cs">
+      <DependentUpon>201703201611467_addCollection.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -62,6 +70,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Entity\Repositories\" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201703201610116_removeCollection.resx">
+      <DependentUpon>201703201610116_removeCollection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201703201611467_addCollection.resx">
+      <DependentUpon>201703201611467_addCollection.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -10,10 +10,10 @@ using System.Data.Entity;
 using ConsoleTestApp.Entity.Entities;
 namespace ConsoleTestApp.Entity.Contexts
 {
-   public class CarContext: DbContext
+   public class WorkersContext: DbContext
     {
-        public CarContext(string connectionString = "name=Instinctools.WorkersDatabaseConnection") : base(connectionString) { }
-        public CarContext() { }
+        public WorkersContext(string connectionString = "name=Instinctools.WorkersDatabaseConnection") : base(connectionString) { }
+        public WorkersContext() { }
 
         public virtual DbSet<Worker> Workers { set; get; }
     }

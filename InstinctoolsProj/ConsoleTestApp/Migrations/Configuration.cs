@@ -5,14 +5,14 @@ namespace ConsoleTestApp.Migrations
     using System.Data.Entity.Migrations;
     using System.Linq;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<ConsoleTestApp.Entity.Contexts.CarContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<ConsoleTestApp.Entity.Contexts.WorkersContext>
     {
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
         }
 
-        protected override void Seed(ConsoleTestApp.Entity.Contexts.CarContext context)
+        protected override void Seed(ConsoleTestApp.Entity.Contexts.WorkersContext context)
         {
             //  This method will be called after migrating to the latest version.
 

@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.26228.9
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Instinctools.Data.EntityFramework", "Instinctools.Data.EntityFramework\Instinctools.Data.EntityFramework.csproj", "{83B30D35-BDBB-413F-A223-879ED91816A2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConsoleTestApp", "ConsoleTestApp\ConsoleTestApp.csproj", "{A49785A6-C044-42CD-B88D-D9F39709E0CE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Instinctools.ConsoleTestApp", "ConsoleTestApp\Instinctools.ConsoleTestApp.csproj", "{A49785A6-C044-42CD-B88D-D9F39709E0CE}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Instinctools.Data", "Instinctools.Data\Instinctools.Data.csproj", "{C383DAEC-A085-4C0D-8BFE-55794791201C}"
 EndProject

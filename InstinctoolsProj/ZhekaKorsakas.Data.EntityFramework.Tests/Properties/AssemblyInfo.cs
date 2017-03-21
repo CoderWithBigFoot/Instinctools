@@ -2,18 +2,18 @@ using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
-[assembly: AssemblyTitle("ZhenyaKorsakas,.Data.EntityFramework.Tests")]
+[assembly: AssemblyTitle("ZhekaKorsakas.Data.EntityFramework.Tests")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("ZhenyaKorsakas,.Data.EntityFramework.Tests")]
+[assembly: AssemblyProduct("ZhekaKorsakas.Data.EntityFramework.Tests")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
 [assembly: ComVisible(false)]
 
-[assembly: Guid("65acb729-0245-43b7-b835-edc3fb191c09")]
+[assembly: Guid("551ee891-689e-495c-a9ce-c3c864a3b565")]
 
 // [assembly: AssemblyVersion("1.0.*")]
 [assembly: AssemblyVersion("1.0.0.0")]

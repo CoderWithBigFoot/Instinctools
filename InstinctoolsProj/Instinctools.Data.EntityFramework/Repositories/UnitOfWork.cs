@@ -4,14 +4,22 @@ using ZhenyaKorsakas.Data.EntityFramework.Entities;
 using ZhenyaKorsakas.Data.EntityFramework.Contexts;
 namespace ZhenyaKorsakas.Data.EntityFramework.Repositories
 {
-    public class UnitOfWork : IUnitOfWork {
+    public class UnitOfWork : IUnitOfWork,IDisposable {
 
-        private SomeContext context;
+        private SomeContext context = new SomeContext();
         private GenericRepository<TestEntity, SomeContext> testEntities;
+
+        public UnitOfWork(string connectionString) {
+            this.context = new SomeContext(connectionString);
+        }
 
         public UnitOfWork(SomeContext context) {
             this.context = context;
         }
+
+        public UnitOfWork() { }
+
+
 
         public SomeContext Context {
             get { return this.context; }
@@ -23,9 +31,6 @@ namespace ZhenyaKorsakas.Data.EntityFramework.Repositories
             }
         }
         
-
-        
-
         private bool disposed = false;
 
         protected virtual void Dispose(bool disposing) {

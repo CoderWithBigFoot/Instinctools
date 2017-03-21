@@ -15,5 +15,14 @@ namespace ZhenyaKorsakas.Data.EntityFramework.Entities
         [MinLength(4)]
         [MaxLength(10)]
         public string Name { set; get; }
+
+        
+        public string Sername { set; get; }
+
+        public override string ToString()
+        {
+            return $"Id: {Id} Name: {Name}";
+
+        }
     }
 }

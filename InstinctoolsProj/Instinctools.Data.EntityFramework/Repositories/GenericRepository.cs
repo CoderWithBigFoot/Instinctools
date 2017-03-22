@@ -35,6 +35,12 @@ namespace ZhenyaKorsakas.Data.EntityFramework.Repositories
             return dbSet;
         }
 
+
+        public virtual TEntity GetSingle(Func<TEntity,bool> predicate) {
+            return dbSet.FirstOrDefault(x => predicate(x));
+        }
+
+
         public virtual void Add(TEntity entity)
         {
             dbSet.Add(entity);

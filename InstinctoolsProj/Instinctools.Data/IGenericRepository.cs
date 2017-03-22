@@ -11,6 +11,8 @@ namespace ZhenyaKorsakas.Data
         IQueryable<TEntity> GetAll();
         IQueryable<TEntity> FindBy(Func<TEntity, bool> predicate);
 
+        TEntity GetSingle(Func<TEntity, bool> predicate);
+
         void Add(TEntity entity);
         void Edit(TEntity entity);
         void Delete(TEntity entity);

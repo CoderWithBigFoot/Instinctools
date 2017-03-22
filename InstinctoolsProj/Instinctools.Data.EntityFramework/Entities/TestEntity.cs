@@ -8,8 +8,7 @@ namespace ZhenyaKorsakas.Data.EntityFramework.Entities
 {
    public class TestEntity
     {
-        [Key]
-        [Required]
+        [Key,Required]
         public int Id { set; get; }
 
         [MinLength(4)]

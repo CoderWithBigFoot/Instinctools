@@ -1,12 +1,14 @@
 ﻿using System;
 using System.Linq;
 using System.Data.Entity;
-using ZhenyaKorsakas.Data;
+using System.Collections.Generic;
+using ZhenyaKorsakas.Data.Entities;
+
 
 namespace ZhenyaKorsakas.Data.EntityFramework.Repositories
 {
     public class GenericRepository<TEntity,CContext>: IGenericRepository<TEntity>
-        where TEntity: class,new()
+        where TEntity: BaseEntity,new()
         where CContext: DbContext
     {
 
@@ -30,14 +32,9 @@ namespace ZhenyaKorsakas.Data.EntityFramework.Repositories
             IQueryable<TEntity> result = dbSet.Where(x => predicate(x));
             return result;
         }
-        public virtual IQueryable<TEntity> GetAll()
+        public virtual IEnumerable<TEntity> GetAll()
         {
             return dbSet;
-        }
-
-
-        public virtual TEntity GetSingle(Func<TEntity,bool> predicate) {
-            return dbSet.FirstOrDefault(x => predicate(x));
         }
 
 

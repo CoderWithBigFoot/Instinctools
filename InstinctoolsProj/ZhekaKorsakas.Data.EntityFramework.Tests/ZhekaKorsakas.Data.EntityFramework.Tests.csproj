@@ -47,6 +47,9 @@
     <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
+    <Reference Include="LinqKit, Version=1.1.8.0, Culture=neutral, PublicKeyToken=bc217f8844052a91, processorArchitecture=MSIL">
+      <HintPath>..\packages\LinqKit.1.1.8.0\lib\net452\LinqKit.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.VisualStudio.TestPlatform.TestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\MSTest.TestFramework.1.1.11\lib\net45\Microsoft.VisualStudio.TestPlatform.TestFramework.dll</HintPath>
     </Reference>
@@ -62,6 +65,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CheckingGenericRepositoryAsAPartOfUnitOfWorkTests.cs" />
+    <Compile Include="ConsoleTestringTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -76,6 +80,10 @@
     <ProjectReference Include="..\Instinctools.Data\ZhenyaKorsakas.Data.csproj">
       <Project>{bb0fc924-b175-4397-9741-abedd3bdd1fe}</Project>
       <Name>ZhenyaKorsakas.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZhenyaKorsakas.ConsoleTesting\ZhenyaKorsakas.ConsoleTesting.csproj">
+      <Project>{685a9d76-d751-4cd7-ab0f-9e5d3893bca4}</Project>
+      <Name>ZhenyaKorsakas.ConsoleTesting</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />

@@ -11,6 +11,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhekaKorsakas.Data.EntityFr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhenyaKorsakas.ConsoleTesting", "ZhenyaKorsakas.ConsoleTesting\ZhenyaKorsakas.ConsoleTesting.csproj", "{685A9D76-D751-4CD7-AB0F-9E5D3893BCA4}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9B01062C-08B1-4FF6-BC8F-2E0196603C91}"
+	ProjectSection(SolutionItems) = preProject
+		Notifications.txt = Notifications.txt
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

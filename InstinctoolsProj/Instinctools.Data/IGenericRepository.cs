@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
+using ZhenyaKorsakas.Data.Entities;
+using System.Collections.Generic;
 namespace ZhenyaKorsakas.Data
 {
-   public interface IGenericRepository<TEntity> where TEntity : class
+   public interface IGenericRepository<TEntity> where TEntity : BaseEntity
     {
-        IQueryable<TEntity> GetAll();
+        IEnumerable<TEntity> GetAll();
         IQueryable<TEntity> FindBy(Func<TEntity, bool> predicate);
-
-        TEntity GetSingle(Func<TEntity, bool> predicate);
 
         void Add(TEntity entity);
         void Edit(TEntity entity);

@@ -1,19 +1,19 @@
 ﻿using System;
-using ZhenyaKorsakas.Data;
 using ZhenyaKorsakas.Data.EntityFramework.Entities;
 using ZhenyaKorsakas.Data.EntityFramework.Contexts;
+using System.Data.Entity;
 namespace ZhenyaKorsakas.Data.EntityFramework.Repositories
 {
     public class UnitOfWork : IUnitOfWork,IDisposable {
 
-        private SomeContext context = new SomeContext();
-        private GenericRepository<TestEntity, SomeContext> testEntities;
+        private DbContext context;
+        private GenericRepository<TestEntity, DbContext> testEntities;
 
-        public UnitOfWork(string connectionString) {
-            this.context = new SomeContext(connectionString);
-        }
+        /*public UnitOfWork(string connectionString) {
+            this.context = new DbContext(connectionString);
+        }*/
 
-        public UnitOfWork(SomeContext context) {
+        public UnitOfWork(DbContext context) {
             this.context = context;
         }
 
@@ -21,13 +21,13 @@ namespace ZhenyaKorsakas.Data.EntityFramework.Repositories
 
 
 
-        public SomeContext Context {
+        public DbContext Context {
             get { return this.context; }
         }
 
-        public GenericRepository<TestEntity,SomeContext> TestEntities {
+        public GenericRepository<TestEntity,DbContext> TestEntities {
             get {
-                return this.testEntities ?? (this.testEntities = new GenericRepository<TestEntity, SomeContext>(this.context));
+                return this.testEntities ?? (this.testEntities = new GenericRepository<TestEntity, DbContext>(this.context));
             }
         }
         

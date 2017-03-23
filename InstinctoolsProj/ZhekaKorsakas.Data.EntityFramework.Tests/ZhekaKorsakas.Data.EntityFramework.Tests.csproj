@@ -64,7 +64,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CheckingGenericRepositoryAsAPartOfUnitOfWorkTests.cs" />
+    <Compile Include="RepositoryAsAPartOfUnitOfWorkTests.cs" />
     <Compile Include="ConsoleTestringTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

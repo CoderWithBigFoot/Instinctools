@@ -15,7 +15,7 @@ namespace ZhekaKorsakas.Data.EntityFramework.Tests
     public class CheckingGenericRepositoryAsAPartOfUnitOfWorkTests
     {
         [TestMethod]
-        public void NullChecking()
+        public void fields_NullChecking_NotNull()
         {
             UnitOfWork uow = new UnitOfWork(new SomeContext("name=Instinctools.Connection_1"));
 
@@ -25,14 +25,14 @@ namespace ZhekaKorsakas.Data.EntityFramework.Tests
         }
 
         [TestMethod]
-        public void AddChecking() {
-            /* UnitOfWork uow = new UnitOfWork(new SomeContext("name=Instinctools.Connection_1"));
-             TestEntity test_1 = new TestEntity { Name = "Somename", Sername = "Korsakas"};*/
+        public void add_AddingNewElement_Added() {
+            /*UnitOfWork uow = new UnitOfWork(new SomeContext("name=Instinctools.Connection_1"));
+             TestEntity test_1 = new TestEntity { Name = "Smes", Sername = "Korsakas"};*/
             /* TestEntity test_2 = new TestEntity { Name = "1", Sername = "Korsakas" };
              TestEntity test_3 = new TestEntity { Name = "sdasdasdk;m;l"};
              */
-            /*
-                        try
+            
+                      /*  try
                         {
                             uow.TestEntities.Add(test_1);
                             uow.Save();
@@ -47,25 +47,28 @@ namespace ZhekaKorsakas.Data.EntityFramework.Tests
             
             var mockContext = new Mock<SomeContext>();
             var mockCollection = new Mock<DbSet<TestEntity>>();
-
-            var test_1 = new TestEntity { Name = "mockName", Sername = "MockSername" };
             mockContext.Setup(x => x.TestEntities).Returns(mockCollection.Object);
-            
+            var test_1 = new TestEntity { Name = "m", Sername = "MockSername" };
             var uow = new UnitOfWork(mockContext.Object);
 
             try
             {
-               uow.TestEntities.Add(new TestEntity { Name = "z", Sername = "Sername" });
-               uow.Save();
+                uow.TestEntities.Add(test_1);
+                uow.Save();
             }
             catch (Exception ex) {
-                Assert.Fail($"\n{ex.Message}");
+                Assert.Fail(ex.Message);
             }
+            
+            //Assert.AreEqual(uow.TestEntities._dbSet, null);
+           
+
+            
         }
 
 
         [TestMethod]
-        public void GetAllCheching() {
+        public void getAll_GettingAllElements_Got() {
             UnitOfWork uow = new UnitOfWork(new SomeContext("name=Instinctools.Connection_1"));
             IEnumerable<TestEntity> result = null;
 
@@ -75,7 +78,7 @@ namespace ZhekaKorsakas.Data.EntityFramework.Tests
         }
 
         [TestMethod]
-        public void DeleteChecking() {
+        public void delete_RemovingElement_Removed() {
             UnitOfWork uow = new UnitOfWork(new SomeContext("name=Instinctools.Connection_1"));
             TestEntity test_1 = new TestEntity { Name = "UniqueName", Sername = "Removable korsakas" };
             
@@ -92,7 +95,7 @@ namespace ZhekaKorsakas.Data.EntityFramework.Tests
         }
 
         [TestMethod]
-        public void EditChecking() {
+        public void edit_ElementEditing_Edited() {
             UnitOfWork uow = new UnitOfWork(new SomeContext("name=Instinctools.Connection_1"));
             string sourceSername = "Kononovich";
             string endSername = "Changed sername";

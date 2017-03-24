@@ -11,7 +11,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhenyaKorsakas.Data.EntityF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhenyaKorsakas.Data.Models", "ZhenyaKorsakas.Data.Models\ZhenyaKorsakas.Data.Models.csproj", "{A38A5CF0-47DC-4FF2-907B-5E6A0AF71EFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhenyaKorsakas.Services", "ZhenyaKorsakas.Services\ZhenyaKorsakas.Services.csproj", "{01D6486D-EF02-4BFE-9F7D-644EA55C64D5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhenyaKorsakas.BLL.Services", "ZhenyaKorsakas.Services\ZhenyaKorsakas.BLL.Services.csproj", "{01D6486D-EF02-4BFE-9F7D-644EA55C64D5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhenyaKorsakas.BLL", "ZhenyaKorsakas.BLL.Data\ZhenyaKorsakas.BLL.csproj", "{6E9BAF10-CBD4-48A0-B595-0804EB354299}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +41,10 @@ Global
 		{01D6486D-EF02-4BFE-9F7D-644EA55C64D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{01D6486D-EF02-4BFE-9F7D-644EA55C64D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{01D6486D-EF02-4BFE-9F7D-644EA55C64D5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E9BAF10-CBD4-48A0-B595-0804EB354299}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E9BAF10-CBD4-48A0-B595-0804EB354299}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E9BAF10-CBD4-48A0-B595-0804EB354299}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E9BAF10-CBD4-48A0-B595-0804EB354299}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

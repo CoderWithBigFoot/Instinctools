@@ -6,7 +6,7 @@ using ZhenyaKorsakas.Data.Entities;
 
 namespace ZhenyaKorsakas.Data.EntityFramework.Repositories
 {
-    public class GenericRepository<TEntity,TContext,TKey>: IGenericRepository<TEntity>
+    public class GenericRepository<TEntity,TContext>: IGenericRepository<TEntity>
         where TEntity: BaseEntity,new()
         where TContext: DbContext
     {
@@ -49,9 +49,9 @@ namespace ZhenyaKorsakas.Data.EntityFramework.Repositories
             dbSet.Remove(entity);
         }
 
-        public virtual void Sort(Func<TEntity, object> field)
+        public virtual IOrderedQueryable<TEntity> Sort(Func<TEntity, object> field)
         {
-            this.dbSet.OrderBy(x => field(x));
+           return this.dbSet.OrderBy(x => field(x));
         }
     }
 }

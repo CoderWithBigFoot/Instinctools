@@ -13,6 +13,6 @@ namespace ZhenyaKorsakas.Data
         void Edit(TEntity entity);
         void Delete(TEntity entity);
 
-        void Sort(Func<TEntity, object> field);
+        IOrderedQueryable<TEntity> Sort(Func<TEntity, object> field);
     }
 }

@@ -11,6 +11,8 @@ namespace ZhenyaKorsakas.Data.Models.Contexts
         public HumansContext(string connectionString = "name=Instinctools.Connection_1") 
             : base(connectionString) { }
 
+        //public HumansContext() { }
+
         public virtual DbSet<Human> Humans { set; get; }
 
     }

@@ -40,17 +40,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Abstractions\EntityService.cs" />
     <Compile Include="HumanService.cs" />
-    <Compile Include="Interfaces\IEntityService.cs" />
-    <Compile Include="Interfaces\IHumanService.cs" />
-    <Compile Include="Interfaces\IService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Instinctools.Data\ZhenyaKorsakas.Data.csproj">
       <Project>{bb0fc924-b175-4397-9741-abedd3bdd1fe}</Project>
       <Name>ZhenyaKorsakas.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ZhenyaKorsakas.BLL.Data\ZhenyaKorsakas.BLL.csproj">
+      <Project>{6e9baf10-cbd4-48a0-b595-0804eb354299}</Project>
+      <Name>ZhenyaKorsakas.BLL</Name>
     </ProjectReference>
     <ProjectReference Include="..\ZhenyaKorsakas.Data.Models\ZhenyaKorsakas.Data.Models.csproj">
       <Project>{a38a5cf0-47dc-4ff2-907b-5e6a0af71efe}</Project>

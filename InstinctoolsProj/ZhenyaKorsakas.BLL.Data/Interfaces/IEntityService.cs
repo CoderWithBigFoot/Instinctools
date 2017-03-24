@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using ZhenyaKorsakas.Data.Entities;
 
-namespace ZhenyaKorsakas.Services.Interfaces
+namespace ZhenyaKorsakas.BLL.Interfaces
 {
-   public interface IEntityService<TEntity>: IService 
-        where TEntity: BaseEntity
+    public interface IEntityService<TEntity> : IService
+        where TEntity : BaseEntity
     {
         IEnumerable<TEntity> GetAll();
         IQueryable<TEntity> Find(Func<TEntity, bool> predicate);

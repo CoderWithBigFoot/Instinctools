@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ZhenyaKorsakas.Services.Interfaces;
-using ZhenyaKorsakas.Services.Abstractions;
 using ZhenyaKorsakas.Data.Models;
 using ZhenyaKorsakas.Data;
+using ZhenyaKorsakas.BLL.Abstractions;
+using ZhenyaKorsakas.BLL.Interfaces;
 
 namespace ZhenyaKorsakas.Services
 {
@@ -20,6 +17,5 @@ namespace ZhenyaKorsakas.Services
                 yield return $"{current.Name} {current.Surname}";
             }
         }
-
     }
 }

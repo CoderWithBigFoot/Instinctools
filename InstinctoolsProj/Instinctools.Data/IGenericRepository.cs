@@ -4,7 +4,7 @@ using ZhenyaKorsakas.Data.Entities;
 using System.Collections.Generic;
 namespace ZhenyaKorsakas.Data
 {
-   public interface IGenericRepository<TEntity> where TEntity : BaseEntity
+   public interface IGenericRepository<TEntity,TKey> where TEntity: BaseEntity<TKey>
     {
         IEnumerable<TEntity> GetAll();
         IQueryable<TEntity> FindBy(Func<TEntity, bool> predicate);
@@ -12,5 +12,6 @@ namespace ZhenyaKorsakas.Data
         void Add(TEntity entity);
         void Edit(TEntity entity);
         void Delete(TEntity entity);
+        void Sort(Func<TEntity, object> field);
     }
 }

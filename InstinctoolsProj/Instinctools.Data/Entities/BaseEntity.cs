@@ -1,10 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
-
+﻿using ZhenyaKorsakas.Data.Interfaces;
 namespace ZhenyaKorsakas.Data.Entities
 {
-   public abstract class BaseEntity
+   public abstract class BaseEntity<T>: IBaseEntity<T>
     {
-        [Key,Required]  
-        public int Id { set; get; }
+        public virtual T Id { set; get; }
     }
 }

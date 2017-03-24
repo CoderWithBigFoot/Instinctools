@@ -7,14 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhenyaKorsakas.Data.EntityF
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhenyaKorsakas.Data", "Instinctools.Data\ZhenyaKorsakas.Data.csproj", "{BB0FC924-B175-4397-9741-ABEDD3BDD1FE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhekaKorsakas.Data.EntityFramework.Tests", "ZhekaKorsakas.Data.EntityFramework.Tests\ZhekaKorsakas.Data.EntityFramework.Tests.csproj", "{551EE891-689E-495C-A9CE-C3C864A3B565}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhenyaKorsakas.ConsoleTesting", "ZhenyaKorsakas.ConsoleTesting\ZhenyaKorsakas.ConsoleTesting.csproj", "{685A9D76-D751-4CD7-AB0F-9E5D3893BCA4}"
-EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{9B01062C-08B1-4FF6-BC8F-2E0196603C91}"
-	ProjectSection(SolutionItems) = preProject
-		Notifications.txt = Notifications.txt
-	EndProjectSection
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZhenyaKorsakas.Data.EntityFramework.Tests", "ZhekaKorsakas.Data.EntityFramework.Tests\ZhenyaKorsakas.Data.EntityFramework.Tests.csproj", "{551EE891-689E-495C-A9CE-C3C864A3B565}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -34,10 +27,6 @@ Global
 		{551EE891-689E-495C-A9CE-C3C864A3B565}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{551EE891-689E-495C-A9CE-C3C864A3B565}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{551EE891-689E-495C-A9CE-C3C864A3B565}.Release|Any CPU.Build.0 = Release|Any CPU
-		{685A9D76-D751-4CD7-AB0F-9E5D3893BCA4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{685A9D76-D751-4CD7-AB0F-9E5D3893BCA4}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{685A9D76-D751-4CD7-AB0F-9E5D3893BCA4}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{685A9D76-D751-4CD7-AB0F-9E5D3893BCA4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

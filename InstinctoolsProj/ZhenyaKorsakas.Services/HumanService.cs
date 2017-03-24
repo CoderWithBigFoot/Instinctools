@@ -12,13 +12,14 @@ namespace ZhenyaKorsakas.Services
 {
     public class HumanService: EntityService<Human>, IHumanService {
 
-        private IUnitOfWork uow;
-        private IGenericRepository<Human> humanRepository;
+        public HumanService(IUnitOfWork uow, IGenericRepository<Human> humanRepo) : base(uow, humanRepo) { }
 
-        public HumanService(IUnitOfWork uow, IGenericRepository<Human> humanRepo): base(uow,humanRepo) {
+        public IEnumerable<string> GetFullNames(Func<Human,bool> predicate) {
 
+            foreach (var current in Find(predicate)) {
+                yield return $"{current.Name} {current.Surname}";
+            }
         }
-
 
     }
 }

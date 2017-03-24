@@ -10,8 +10,8 @@ namespace ZhenyaKorsakas.Services.Abstractions
     public abstract class EntityService<TEntity> : IEntityService<TEntity>
        where TEntity : BaseEntity
     {
-        IUnitOfWork uow;
-        IGenericRepository<TEntity> repository;
+       private IUnitOfWork uow;
+       private readonly IGenericRepository<TEntity> repository;
 
         public EntityService(IUnitOfWork uow, IGenericRepository<TEntity> repository)
         {
@@ -19,14 +19,12 @@ namespace ZhenyaKorsakas.Services.Abstractions
             this.repository = repository;
         }
 
-
         public void Create(TEntity entity)
         {
             if (entity == null) { throw new Exception("entity"); }
 
             this.repository.Add(entity);
             this.uow.Save();
-
         }
 
         public void Delete(TEntity entity)

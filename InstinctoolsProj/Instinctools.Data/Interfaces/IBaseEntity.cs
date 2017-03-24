@@ -1,7 +1,7 @@
 ﻿namespace ZhenyaKorsakas.Data.Interfaces
 {
-   public interface IBaseEntity<T>
+   public interface IBaseEntity
     {
-        T Id { set; get; }
+        int Id { set; get; }
     }
 }

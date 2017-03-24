@@ -1,5 +1,8 @@
 ﻿using System;
 using System.Data.Entity;
+using System.Collections.Generic;
+using ZhenyaKorsakas.Data;
+using ZhenyaKorsakas.Data.Entities;
 namespace ZhenyaKorsakas.Data.EntityFramework.Repositories
 {
     public class UnitOfWork : IUnitOfWork,IDisposable {

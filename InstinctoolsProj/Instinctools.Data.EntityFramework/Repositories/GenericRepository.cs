@@ -4,16 +4,15 @@ using System.Data.Entity;
 using System.Collections.Generic;
 using ZhenyaKorsakas.Data.Entities;
 
-
 namespace ZhenyaKorsakas.Data.EntityFramework.Repositories
 {
-    public class GenericRepository<TEntity,TContext,TKey>: IGenericRepository<TEntity,TKey>
-        where TEntity: BaseEntity<TKey>,new()
+    public class GenericRepository<TEntity,TContext,TKey>: IGenericRepository<TEntity>
+        where TEntity: BaseEntity,new()
         where TContext: DbContext
     {
 
         private TContext context;
-        private DbSet<TEntity> dbSet;
+        private readonly DbSet<TEntity> dbSet;
 
         public GenericRepository(TContext context) {
             this.context = context;
@@ -22,9 +21,6 @@ namespace ZhenyaKorsakas.Data.EntityFramework.Repositories
 
         public TContext Context {
             get { return this.context; }
-        }
-        public DbSet<TEntity> _dbSet {
-            get { return this.dbSet; }
         }
 
         public virtual IEnumerable<TEntity> GetAll()

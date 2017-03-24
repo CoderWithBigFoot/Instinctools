@@ -64,14 +64,7 @@
     <Reference Include="System.Core" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\Human.cs" />
-    <Compile Include="Migrations\201703240932171_init.cs" />
-    <Compile Include="Migrations\201703240932171_init.Designer.cs">
-      <DependentUpon>201703240932171_init.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TestContexts\HumanContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -86,11 +79,6 @@
       <Project>{bb0fc924-b175-4397-9741-abedd3bdd1fe}</Project>
       <Name>ZhenyaKorsakas.Data</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Migrations\201703240932171_init.resx">
-      <DependentUpon>201703240932171_init.cs</DependentUpon>
-    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets" Condition="Exists('$(VSToolsPath)\TeamTest\Microsoft.TestTools.targets')" />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

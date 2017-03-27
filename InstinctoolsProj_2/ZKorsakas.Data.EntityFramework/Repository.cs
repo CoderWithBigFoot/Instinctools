@@ -5,10 +5,11 @@ using System.Data.Entity;
 namespace ZKorsakas.Data.EntityFramework
 {
     public class Repository<TEntity,TContext> : IRepository<TEntity>
-        where TEntity : IEntity
+        where TEntity : class, IEntity
         where TContext : DbContext
     {
         protected TContext _context;
+        protected readonly DbSet<TEntity> _dbSet;
 
         public Repository(TContext context) {
             this._context = context;

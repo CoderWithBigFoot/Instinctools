@@ -47,6 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entity.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository.cs" />
     <Compile Include="UnitOfWork.cs" />
@@ -56,14 +57,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ZKorsakas.Data.Abstractions\ZKorsakas.Data.EntityFramework.Abstractions.csproj">
-      <Project>{9bc89d34-609a-43f2-8627-40bafd3506ae}</Project>
-      <Name>ZKorsakas.Data.EntityFramework.Abstractions</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\ZKorsakas.Data.Models\ZKorsakas.Data.EntityFramework.Models.csproj">
-      <Project>{27a4d458-8018-40fd-8a9e-d6dadc9282d6}</Project>
-      <Name>ZKorsakas.Data.EntityFramework.Models</Name>
-    </ProjectReference>
     <ProjectReference Include="..\ZKorsakas\ZKorsakas.Data.csproj">
       <Project>{0f628538-2511-4620-b438-126faf5621ab}</Project>
       <Name>ZKorsakas.Data</Name>

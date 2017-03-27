@@ -9,7 +9,6 @@ namespace ZKorsakas.Data.EntityFramework
         where TContext : DbContext
     {
         protected TContext _context;
-        protected readonly DbSet<TEntity> _dbSet;
 
         public Repository(TContext context) {
             this._context = context;

@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Data.Entity;
-using ZKorsakas.Data.EntityFramework.Models;
-using ZKorsakas.Data.EntityFramework.Abstractions;
 
 namespace ZKorsakas.Data.EntityFramework
 {
@@ -9,19 +7,10 @@ namespace ZKorsakas.Data.EntityFramework
     {
         protected bool _disposed;
         private DbContext _context;
-        private IRepository<Human> _humans;
 
         public UnitOfWork(DbContext context)
         {
             this._context = context;
-        }
-    
-        public IRepository<Human> Humans
-        {
-            get
-            {
-                return _humans ?? (_humans = new Repository<Human,DbContext>(_context));
-            }
         }
 
         public void Commit()

@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Data.Entity;
-namespace ZhenyaKorsakas.Data.EntityFramework.Repositories
+namespace ZhenyaKorsakas.Data.EntityFramework
 {
     public class UnitOfWork : IUnitOfWork,IDisposable {
 

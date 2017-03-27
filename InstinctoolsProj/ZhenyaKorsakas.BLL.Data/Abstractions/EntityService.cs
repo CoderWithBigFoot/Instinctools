@@ -1,17 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using ZhenyaKorsakas.Data.Entities;
 using ZhenyaKorsakas.Data;
 using ZhenyaKorsakas.BLL.Interfaces;
 
 namespace ZhenyaKorsakas.BLL.Abstractions
 {
     public abstract class EntityService<TEntity> : IEntityService<TEntity>
-        where TEntity : BaseEntity
+        where TEntity : Entity
     {
         private IUnitOfWork uow;
-        private readonly IGenericRepository<TEntity> repository;
+        private readonly IRepository<TEntity> repository;
 
         public EntityService(IUnitOfWork uow, IGenericRepository<TEntity> repository)
         {

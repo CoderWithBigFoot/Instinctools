@@ -9,7 +9,7 @@ namespace ZhenyaKorsakas.Services
 {
     public class HumanService: EntityService<Human>, IHumanService {
 
-        public HumanService(IUnitOfWork uow, IGenericRepository<Human> humanRepo) : base(uow, humanRepo) { }
+        public HumanService(IUnitOfWork uow, IRepository<Human> humanRepo) : base(uow, humanRepo) { }
 
         public IEnumerable<string> GetFullNames(Func<Human,bool> predicate) {
 

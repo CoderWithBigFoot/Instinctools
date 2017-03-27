@@ -1,12 +1,11 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
-using ZhenyaKorsakas.Data.Entities;
-using ZhenyaKorsakas.Data.Interfaces;
+using ZhenyaKorsakas.Data;
 
 namespace ZhenyaKorsakas.Data.Models
 {
     [Table("Humans")]
-   public class Human: BaseEntity,IHuman
+   public class Human: Entity,IHuman
     {
         [Required]
         [MinLength(2),MaxLength(10)]

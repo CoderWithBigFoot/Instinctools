@@ -1,14 +1,15 @@
 ﻿using System.Reflection;
+using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
 
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("Instinctools.Data")]
+[assembly: AssemblyTitle("ZKorsakas.Data.Abstractions")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("Instinctools.Data")]
+[assembly: AssemblyProduct("ZKorsakas.Data.Abstractions")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -19,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("bb0fc924-b175-4397-9741-abedd3bdd1fe")]
+[assembly: Guid("9bc89d34-609a-43f2-8627-40bafd3506ae")]
 
 // Version information for an assembly consists of the following four values:
 //

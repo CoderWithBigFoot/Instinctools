@@ -14,7 +14,7 @@ namespace ZKorsakas.Data.EntityFramework.Tests
     [TestClass]
     public class RepositoryTests
     {
-       /* [TestMethod]
+        [TestMethod]
         public void Commit_ShouldSaveChanges_CallSaveChanges() {
             var mockContext = new Mock<HumanContext>();
             mockContext.Setup(x => x.SaveChanges());
@@ -24,8 +24,7 @@ namespace ZKorsakas.Data.EntityFramework.Tests
 
             mockContext.Verify(x => x.SaveChanges(),Times.AtLeast(1));
         }
-        */
-
+        
         [TestMethod]
         public void GetAll_GetAllObjects_NotNull()
         {
@@ -76,29 +75,79 @@ namespace ZKorsakas.Data.EntityFramework.Tests
             where TContext : DbContext
         {
             var mockContext = new Mock<TContext>();
+            var mockDbSet = new Mock<DbSet<TEntity>>();
             mockContext.Setup(x => x.Set<TEntity>())
-                .Returns(Mock.Of<DbSet<TEntity>>);
+                .Returns(mockDbSet.Object);         
             var repository = new Repository<TEntity, TContext>(mockContext.Object);
-
-
+            
             var test_1 = new Mock<TEntity>();
-            test_1.Setup(x => x.Id == 1);
-           
-            repository.Add(test_1.Object);
 
-            Assert.AreNotEqual(mockContext.Object.Set<TEntity>().Count(), 0);
+            try
+            {
+                repository.Add(test_1.Object);
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
+
+            //Assert.AreNotEqual(mockContext.Object.Set<TEntity>().Count(), 0);
         }
 
         [TestMethod]
         public void Update_UpdatingObject_EntityStateIsModified()
         {
-
+            Update_UpdatingObject_EntityStateIsModified_Helper<Human, HumanContext>();
         }
 
         private void Update_UpdatingObject_EntityStateIsModified_Helper<TEntity,TContext>()
              where TEntity : class, IEntity
              where TContext : DbContext
         {
+            var mockContext = new Mock<TContext>();
+            mockContext.Setup(x => x.Set<TEntity>())
+                .Returns(Mock.Of<DbSet<TEntity>>);
+
+            var repository = new Repository<TEntity, TContext>(mockContext.Object);
+
+            var uow = new UnitOfWork(mockContext.Object);
+            var test_1 = new Mock<TEntity>();
+
+            try
+            {
+                repository.Update(test_1.Object);             
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
+        }
+
+        [TestMethod]
+        public void Delete_DeleteObject_CountIsZero()
+        {
+            this.Delete_DeleteObject_CountIsZero_Helper<Human, HumanContext>();
+        }
+
+        private void Delete_DeleteObject_CountIsZero_Helper<TEntity, TContext>()
+             where TEntity : class, IEntity
+             where TContext : DbContext
+        {
+            var mockContext = new Mock<TContext>();
+            mockContext.Setup(x => x.Set<TEntity>()).Returns(Mock.Of<DbSet<TEntity>>());
+                
+            var repository = new Repository<TEntity, TContext>(mockContext.Object);
+
+            var test_1 = new Mock<TEntity>();
+
+            try
+            {
+                repository.Delete(test_1.Object);         
+            }
+            catch (Exception ex)
+            {
+                Assert.Fail(ex.Message);
+            }
 
         }
     }

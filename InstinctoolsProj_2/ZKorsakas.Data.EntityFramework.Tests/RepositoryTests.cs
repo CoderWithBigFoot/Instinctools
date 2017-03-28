@@ -77,7 +77,7 @@ namespace ZKorsakas.Data.EntityFramework.Tests
             var mockContext = new Mock<TContext>();
             var mockDbSet = new Mock<DbSet<TEntity>>();
             mockContext.Setup(x => x.Set<TEntity>())
-                .Returns(mockDbSet.Object);         
+                .Returns(mockDbSet.Object);      
             var repository = new Repository<TEntity, TContext>(mockContext.Object);
             
             var test_1 = new Mock<TEntity>();
@@ -85,6 +85,7 @@ namespace ZKorsakas.Data.EntityFramework.Tests
             try
             {
                 repository.Add(test_1.Object);
+                mockDbSet.Verify(x => x.Add(It.IsAny<TEntity>()), Times.Once);
             }
             catch (Exception ex)
             {
@@ -101,21 +102,23 @@ namespace ZKorsakas.Data.EntityFramework.Tests
         }
 
         private void Update_UpdatingObject_EntityStateIsModified_Helper<TEntity,TContext>()
-             where TEntity : class, IEntity
+             where TEntity :  class, IEntity
              where TContext : DbContext
         {
             var mockContext = new Mock<TContext>();
             mockContext.Setup(x => x.Set<TEntity>())
                 .Returns(Mock.Of<DbSet<TEntity>>);
+            mockContext.Setup(x => x.SaveChanges());
 
             var repository = new Repository<TEntity, TContext>(mockContext.Object);
 
-            var uow = new UnitOfWork(mockContext.Object);
             var test_1 = new Mock<TEntity>();
+            test_1.Setup(x => x.Id).Returns(123);
 
             try
             {
-                repository.Update(test_1.Object);             
+
+
             }
             catch (Exception ex)
             {

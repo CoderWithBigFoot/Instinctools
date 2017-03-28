@@ -65,5 +65,41 @@ namespace ZKorsakas.Data.EntityFramework.Tests
             Assert.IsNotNull(result);
         }
 
+        [TestMethod]
+        public void Add_AddingObject_CountNotAZero()
+        {
+            this.Add_AddingObject_CountNotAZero_Helper<Human, HumanContext>();
+        }
+
+        private void Add_AddingObject_CountNotAZero_Helper<TEntity, TContext>()
+            where TEntity : class, IEntity
+            where TContext : DbContext
+        {
+            var mockContext = new Mock<TContext>();
+            mockContext.Setup(x => x.Set<TEntity>())
+                .Returns(Mock.Of<DbSet<TEntity>>);
+            var repository = new Repository<TEntity, TContext>(mockContext.Object);
+
+
+            var test_1 = new Mock<TEntity>();
+            test_1.Setup(x => x.Id == 1);
+           
+            repository.Add(test_1.Object);
+
+            Assert.AreNotEqual(mockContext.Object.Set<TEntity>().Count(), 0);
+        }
+
+        [TestMethod]
+        public void Update_UpdatingObject_EntityStateIsModified()
+        {
+
+        }
+
+        private void Update_UpdatingObject_EntityStateIsModified_Helper<TEntity,TContext>()
+             where TEntity : class, IEntity
+             where TContext : DbContext
+        {
+
+        }
     }
 }

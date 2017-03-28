@@ -15,23 +15,24 @@ namespace ZKorsakas.Data.EntityFramework
         }
 
         public IQueryable<TEntity> GetAll() {
-            return _context.Set<TEntity>();
+            return _context?.Set<TEntity>();
         }
 
         public IQueryable<TEntity> FindBy(Func<TEntity, bool> predicate) {
-            return _context.Set<TEntity>();
+            return _context?.Set<TEntity>();
         }
 
         public void Add(TEntity entity) {
-            this._context.Set<TEntity>().Add(entity);
+            this._context?.Set<TEntity>().Add(entity);
         }
 
         public void Update(TEntity entity) {
+            if (_context == null) { return; }
             _context.Entry<TEntity>(entity).State = EntityState.Modified;
         }
 
         public void Delete(TEntity entity) {
-            this._context.Set<TEntity>().Remove(entity);
+            this._context?.Set<TEntity>().Remove(entity);
         }
     }
 }

@@ -19,20 +19,20 @@ namespace ZKorsakas.Data.EntityFramework
         }
 
         public IQueryable<TEntity> FindBy(Func<TEntity, bool> predicate) {
-            return _context?.Set<TEntity>();
+            return _context?.Set<TEntity>()?.Where(x=>predicate(x));
         }
 
         public void Add(TEntity entity) {
-            this._context?.Set<TEntity>().Add(entity);
+            this._context?.Set<TEntity>()?.Add(entity);
         }
 
         public void Update(TEntity entity) {
-            if (_context == null) { return; }
+            if (_context == null) { throw new Exception("DbContext is null"); }
             _context.Entry<TEntity>(entity).State = EntityState.Modified;
         }
 
         public void Delete(TEntity entity) {
-            this._context?.Set<TEntity>().Remove(entity);
+            this._context?.Set<TEntity>()?.Remove(entity);
         }
     }
 }

@@ -62,6 +62,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Contexts\HumanContext.cs" />
+    <Compile Include="Helpers\EntityFrameworkMockHelpers.cs" />
     <Compile Include="Migrations\201703281548399_Init.cs" />
     <Compile Include="Migrations\201703281548399_Init.Designer.cs">
       <DependentUpon>201703281548399_Init.cs</DependentUpon>

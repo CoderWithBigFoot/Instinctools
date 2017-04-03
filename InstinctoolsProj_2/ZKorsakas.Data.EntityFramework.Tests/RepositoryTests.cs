@@ -2,17 +2,24 @@
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using Moq;
 using System.Collections.Generic;
-using System.Linq;
+using System.Data.Entity;
+using Effort;
 using ZKorsakas.Data.EntityFramework.Tests.Contexts;
 using ZKorsakas.Data.EntityFramework.Tests.Models;
-using System.Data.Entity;
 using ZKorsakas.Data.EntityFramework.Tests.Helpers;
+using ZKorsakas.Data.EntityFramework.Tests.ProviderFactories;
+
 
 namespace ZKorsakas.Data.EntityFramework.Tests
 {
     [TestClass]
     public class RepositoryTests
     {
+        private void InMemoryDatabaseInitializing() {
+            Effort.Provider.EffortProviderConfiguration.RegisterProvider();
+            EffortProviderFactory.ResetDb();
+        }
+
         [TestMethod]
         public void Commit_ShouldSaveChanges_CallSaveChanges() {
             var mockContext = new Mock<HumanContext>();
@@ -104,24 +111,21 @@ namespace ZKorsakas.Data.EntityFramework.Tests
             Update_UpdatingObject_EntityStateIsModified_Helper<Human, HumanContext>();
         }
 
-        private void Update_UpdatingObject_EntityStateIsModified_Helper<TEntity,TContext>()
-             where TEntity :  class, IEntity
-             where TContext : DbContext
+        private void Update_UpdatingObject_EntityStateIsModified_Helper<TEntity, TContext>()
+             where TEntity : class, IEntity
+             where TContext : DbContext, new()
         {
-            var mockContext = new Mock<TContext>();
-            mockContext.Setup(x => x.Set<TEntity>())
-                .Returns(Mock.Of<DbSet<TEntity>>);
-            mockContext.Setup(x => x.SaveChanges());
-
-            var repository = new Repository<TEntity, TContext>(mockContext.Object);
-
-            var test_1 = new Mock<TEntity>();
-            test_1.Setup(x => x.Id).Returns(123);
+            InMemoryDatabaseInitializing();
+            var context = new TContext();
+            var uow = new UnitOfWork(context);
+            var repository = new Repository<TEntity, TContext>(context);
+            var mockTEntity = new Mock<TEntity>();
+            mockTEntity.Setup(x => x.Id).Returns(1000);
 
             try
             {
-                Assert.Fail("");
-
+                repository.Add(mockTEntity.Object);
+                //uow.Commit();
             }
             catch (Exception ex)
             {

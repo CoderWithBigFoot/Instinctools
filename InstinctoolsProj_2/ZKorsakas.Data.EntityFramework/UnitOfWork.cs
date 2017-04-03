@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Data.Entity;
-
 namespace ZKorsakas.Data.EntityFramework
 {
     public class UnitOfWork : IUnitOfWork, IDisposable
@@ -10,12 +9,13 @@ namespace ZKorsakas.Data.EntityFramework
 
         public UnitOfWork(DbContext context)
         {
+            if (context == null) { throw new ArgumentNullException("Context is null"); }
             this._context = context;
         }
 
         public void Commit()
         {
-           this._context?.SaveChanges();
+           this._context.SaveChanges();
         }
 
         protected virtual void Dispose(bool disposing)

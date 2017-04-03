@@ -11,19 +11,20 @@ namespace ZKorsakas.Data.EntityFramework
         protected TContext _context;
 
         public Repository(TContext context) {
+            if (context == null) { throw new ArgumentNullException("DbContext is null"); }
             this._context = context;
         }
 
         public IQueryable<TEntity> GetAll() {
-            return _context?.Set<TEntity>();
+            return _context.Set<TEntity>();
         }
 
         public IQueryable<TEntity> FindBy(Func<TEntity, bool> predicate) {
-            return _context?.Set<TEntity>()?.Where(x=>predicate(x));
+            return _context.Set<TEntity>().Where(x=>predicate(x));
         }
 
         public void Add(TEntity entity) {
-            this._context?.Set<TEntity>()?.Add(entity);
+            this._context.Set<TEntity>().Add(entity);
         }
 
         public void Update(TEntity entity) {
@@ -32,7 +33,7 @@ namespace ZKorsakas.Data.EntityFramework
         }
 
         public void Delete(TEntity entity) {
-            this._context?.Set<TEntity>()?.Remove(entity);
+            this._context.Set<TEntity>()?.Remove(entity);
         }
     }
 }

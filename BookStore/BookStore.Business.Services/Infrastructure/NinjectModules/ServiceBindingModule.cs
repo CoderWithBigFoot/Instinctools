@@ -1,7 +1,4 @@
-﻿using System;
-using Ninject.Modules;
-using BookStore.Business.Services;
-using BookStore.Business;
+﻿using Ninject.Modules;
 
 namespace BookStore.Business.Services.Infrastructure.NinjectModules
 {

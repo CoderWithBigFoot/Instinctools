@@ -24,5 +24,10 @@ namespace BookStore.Business.Services
         {
             return _bookStoreUow.BookRepository.FindBy(predicate);
         }
+
+        public Book FindById(int id)
+        {
+            return _bookStoreUow.BookRepository.GetElementById(id);
+        }
     }
 }

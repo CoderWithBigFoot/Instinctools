@@ -1,12 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Data.Entity;
+﻿using System.Data.Entity;
 using ZKorsakas.Data.EntityFramework;
 using BookStore.Data.EntityFramework.Entities;
-
 
 namespace BookStore.Data.EntityFramework
 {

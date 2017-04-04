@@ -23,6 +23,10 @@ namespace ZKorsakas.Data.EntityFramework
             return _context.Set<TEntity>().Where(x=>predicate(x));
         }
 
+        public TEntity GetElementById(int id) {
+            return _context.Set<TEntity>().Find(id);
+        }
+
         public void Add(TEntity entity) {
             this._context.Set<TEntity>().Add(entity);
         }

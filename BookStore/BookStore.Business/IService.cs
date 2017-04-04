@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using ZKorsakas.Data.EntityFramework;
 
 namespace BookStore.Business
@@ -12,5 +9,7 @@ namespace BookStore.Business
     {
         IEnumerable<TEntity> GetAllElements();
         IEnumerable<TEntity> FindElementsBy(Func<TEntity,bool> predicate);
+
+        TEntity FindById(int id);
     }
 }

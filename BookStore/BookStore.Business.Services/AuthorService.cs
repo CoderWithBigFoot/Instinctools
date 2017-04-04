@@ -4,7 +4,6 @@ using BookStore.Data.EntityFramework;
 using BookStore.Data.EntityFramework.Entities;
 using BookStore.Data.EntityFramework.Contexts;
 
-
 namespace BookStore.Business.Services
 {
     public class AuthorService : IAuthorService<Author>
@@ -24,6 +23,11 @@ namespace BookStore.Business.Services
         public IEnumerable<Author> FindElementsBy(Func<Author, bool> predicate)
         {
             return _bookStoreUow.AuthorRepository.FindBy(predicate);
+        }
+
+        public Author FindById(int id)
+        {
+            return _bookStoreUow.AuthorRepository.GetElementById(id);
         }
     }
 }

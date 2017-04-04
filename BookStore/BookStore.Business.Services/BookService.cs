@@ -6,7 +6,7 @@ using BookStore.Data.EntityFramework.Contexts;
 
 namespace BookStore.Business.Services
 {
-    public class BookService : IBookService<Book>
+    public class BookService : IBookService
     {
         protected BookStoreUow _bookStoreUow;
 
@@ -15,17 +15,17 @@ namespace BookStore.Business.Services
             _bookStoreUow = new BookStoreUow(new BookStoreContext(connectionString));
         }
 
-        public IEnumerable<Book> GetAllElements()
+        public IEnumerable<Book> GetAllBooks()
         {
             return _bookStoreUow.BookRepository.GetAll();
         }
 
-        public IEnumerable<Book> FindElementsBy(Func<Book, bool> predicate)
+        public IEnumerable<Book> FindBooksBy(Func<Book, bool> predicate)
         {
             return _bookStoreUow.BookRepository.FindBy(predicate);
         }
 
-        public Book FindById(int id)
+        public Book FindBookById(int id)
         {
             return _bookStoreUow.BookRepository.GetElementById(id);
         }

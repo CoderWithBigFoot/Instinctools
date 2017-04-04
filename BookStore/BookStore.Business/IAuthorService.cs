@@ -1,12 +1,14 @@
-﻿using System.Collections.Generic;
-using System;
+﻿using System;
+using System.Collections.Generic;
 using BookStore.Data.EntityFramework.Entities;
 
 namespace BookStore.Business
 {
-    public interface IAuthorService<TEntity> : IService<TEntity>
-        where TEntity : Author
+    public interface IAuthorService
     {
-        
+        IEnumerable<Author> GetAllAuthors();
+        IEnumerable<Author> FindAuthorsBy(Func<Author, bool> predicate);
+
+        Author FindAuthorById(int id);
     }
 }

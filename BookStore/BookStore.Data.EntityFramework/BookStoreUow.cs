@@ -7,6 +7,7 @@ using System.Data.Entity;
 using ZKorsakas.Data.EntityFramework;
 using BookStore.Data.EntityFramework.Entities;
 
+
 namespace BookStore.Data.EntityFramework
 {
     public class BookStoreUow : UnitOfWork
@@ -21,21 +22,10 @@ namespace BookStore.Data.EntityFramework
             _context = context;
         }
 
-        public Repository<Book, DbContext> BookRepository
-        {
-            get
-            {
-               return _booksRepository ?? (_booksRepository = new Repository<Book, DbContext>(_context));
-            }
-        }
+        public Repository<Book, DbContext> BookRepository => _booksRepository ?? (_booksRepository = new Repository<Book, DbContext>(_context));
 
-        public Repository<Author, DbContext> AuthorRepository
-        {
-            get
-            {
-                return _authorRepository ?? (_authorRepository = new Repository<Author, DbContext>(_context));
-            }
-        }
+        public Repository<Author, DbContext> AuthorRepository => _authorRepository ?? (_authorRepository = new Repository<Author, DbContext>(_context));
+        
 
     }
 }

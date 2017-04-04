@@ -6,7 +6,7 @@ namespace BookStore.Business.Services.Infrastructure.NinjectModules
     {
         protected string _connectionString;
 
-        private ServiceBindingModule(string connectionString)
+        public ServiceBindingModule(string connectionString)
         {
             _connectionString = connectionString;
         }

@@ -30,7 +30,10 @@ namespace BookStore.Business.Services
 
         public AuthorDto FindAuthorById(int id)
         {
-            return Mapper.Map<AuthorDto>(_bookStoreUow.AuthorRepository.GetElementById(id));
+            var author = _bookStoreUow.AuthorRepository.GetElementById(id);
+            List<int> a = new List<int>();
+
+            return Mapper.Map<AuthorDto>(author);
         }
     }
 }

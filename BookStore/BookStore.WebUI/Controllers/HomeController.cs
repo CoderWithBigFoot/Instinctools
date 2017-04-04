@@ -25,8 +25,16 @@ namespace BookStore.WebUI.Controllers
 
         [HttpGet]
         public ActionResult GetAuthors() {
-            var result = _authorService.GetAllAuthors();
-            return PartialView("~/Views/Shared/AuthorsDisplaying.cshtml",Mapper.Map<IEnumerable<AuthorViewModel>>(result));
+            var authorsCollection = _authorService.GetAllAuthors();
+            var result = Mapper.Map<IEnumerable<AuthorViewModel>>(authorsCollection);
+            return PartialView("~/Views/Shared/AuthorsDisplaying.cshtml",result);
+        }
+
+        [HttpGet]
+        public PartialViewResult GetAuthor() {
+            var author = _authorService.FindAuthorById(1);
+            var result = Mapper.Map<AuthorViewModel>(author);
+            return PartialView("/Views/Shared/AuthorViewModelDisplaying.cshtml",result);
         }
     }
 }

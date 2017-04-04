@@ -1,0 +1,8 @@
+﻿@using BookStore.WebUI.Models
+@model AuthorViewModel
+
+    @foreach (var property in ViewData.ModelMetadata.Properties)
+    {
+        <span>@property</span><br>
+        
+    }

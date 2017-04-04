@@ -21,13 +21,14 @@
    <h1>Here is from index.cshtml</h1>
 
     @Ajax.ActionLink("Get authors","GetAuthors",new AjaxOptions {
-        UpdateTargetId = "authors",
-        HttpMethod = "Get"
-    })
+        UpdateTargetId = "authors"
+})
 
     <div id="authors">
         </div>
 
+    <script src="~/Scripts/jquery-1.10.2.min.js"></script>
+    <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/jqueryval")
 </body>

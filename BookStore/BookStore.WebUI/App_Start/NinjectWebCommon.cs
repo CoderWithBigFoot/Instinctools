@@ -44,7 +44,7 @@ namespace BookStore.WebUI.App_Start
             {
                 new ServiceBindingModule("BookStoreDb")
             };
-            var kernel = new StandardKernel();
+            var kernel = new StandardKernel(ninjectModules);
             try
             {
                 kernel.Bind<Func<IKernel>>().ToMethod(ctx => () => new Bootstrapper().Kernel);

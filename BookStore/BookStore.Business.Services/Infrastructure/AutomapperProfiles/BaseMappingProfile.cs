@@ -1,4 +1,5 @@
-﻿using BookStore.Business.Dto;
+﻿using System;
+using BookStore.Business.Dto;
 using BookStore.Data.EntityFramework.Entities;
 using AutoMapper;
 
@@ -10,6 +11,7 @@ namespace BookStore.Business.Services.Infrastructure.AutomapperProfiles
         {
             CreateMap<Author, AuthorDto>();
             CreateMap<Book, BookDto>();
+            CreateMap<Func<AuthorDto, bool>, Func<Author, bool>>();
         }
     }
 }

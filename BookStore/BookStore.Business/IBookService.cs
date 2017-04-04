@@ -1,14 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
-using BookStore.Data.EntityFramework.Entities;
+using BookStore.Business.Dto;
 
 namespace BookStore.Business
 {
     public interface IBookService
     {
-        IEnumerable<Book> GetAllBooks();
-        IEnumerable<Book> FindBooksBy(Func<Book, bool> predicate);
+        IEnumerable<BookDto> GetAllBooks();
+        IEnumerable<BookDto> FindBooksBy(Func<BookDto, bool> predicate);
 
-        Book FindBookById(int id);       
+        BookDto FindBookById(int id);       
     }
 }

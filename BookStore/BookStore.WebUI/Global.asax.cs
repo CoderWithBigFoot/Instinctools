@@ -1,10 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
+using AutoMapper;
+using BookStore.Business.Services.Infrastructure.AutomapperProfiles;
+using BookStore.WebUI.Infrastructure.AutomapperProfiles;
 
 namespace BookStore.WebUI
 {
@@ -12,6 +11,14 @@ namespace BookStore.WebUI
     {
         protected void Application_Start()
         {
+            Mapper.Initialize(cfg => cfg.AddProfiles(new[] 
+            {
+                typeof(BaseMappingProfile),
+                typeof(DtoViewModelMappingProfile),
+                typeof(ViewModelDtoMappingProfile)
+            }
+            ));
+
             AreaRegistration.RegisterAllAreas();
             FilterConfig.RegisterGlobalFilters(GlobalFilters.Filters);
             RouteConfig.RegisterRoutes(RouteTable.Routes);

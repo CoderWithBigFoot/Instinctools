@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using BookStore.Data.EntityFramework;
 using BookStore.Data.EntityFramework.Entities;
 using BookStore.Data.EntityFramework.Contexts;
+using BookStore.Business.Dto;
+using AutoMapper;
 
 namespace BookStore.Business.Services
 {
@@ -15,19 +17,20 @@ namespace BookStore.Business.Services
             _bookStoreUow = new BookStoreUow(new BookStoreContext(connectionString));
         }
 
-        public IEnumerable<Book> GetAllBooks()
+        public IEnumerable<BookDto> GetAllBooks()
         {
-            return _bookStoreUow.BookRepository.GetAll();
+            return Mapper.Map<IEnumerable<BookDto>>(_bookStoreUow.BookRepository.GetAll());
         }
 
-        public IEnumerable<Book> FindBooksBy(Func<Book, bool> predicate)
+        public IEnumerable<BookDto> FindBooksBy(Func<BookDto, bool> predicate)
         {
-            return _bookStoreUow.BookRepository.FindBy(predicate);
+            var bookPredicate = Mapper.Map<Func<Book, bool>>(predicate);
+            return Mapper.Map<IEnumerable<BookDto>>(_bookStoreUow.BookRepository.FindBy(bookPredicate));
         }
 
-        public Book FindBookById(int id)
+        public BookDto FindBookById(int id)
         {
-            return _bookStoreUow.BookRepository.GetElementById(id);
+            return Mapper.Map<BookDto>(_bookStoreUow.BookRepository.GetElementById(id));
         }
     }
 }

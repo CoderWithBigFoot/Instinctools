@@ -9,8 +9,26 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Index</title>
+
+    <style>
+        a {
+            text-decoration:none;
+        }
+        </style>
+
 </head>
 <body>
    <h1>Here is from index.cshtml</h1>
+
+    @Ajax.ActionLink("Get authors","GetAuthors",new AjaxOptions {
+        UpdateTargetId = "authors",
+        HttpMethod = "Get"
+    })
+
+    <div id="authors">
+        </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
 </body>
 </html>

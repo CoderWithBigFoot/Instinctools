@@ -4,6 +4,7 @@ using BookStore.Business;
 using BookStore.WebUI.Models;
 using BookStore.Business.Dto;
 using AutoMapper;
+using AutoMapper.XpressionMapper;
 
 namespace BookStore.WebUI.Controllers
 {
@@ -23,18 +24,27 @@ namespace BookStore.WebUI.Controllers
             return View();
         }
 
+
+
         [HttpGet]
-        public ActionResult GetAuthors() {
+        public PartialViewResult GetAuthors() {
             var authorsCollection = _authorService.GetAllAuthors();
             var result = Mapper.Map<IEnumerable<AuthorViewModel>>(authorsCollection);
-            return PartialView("~/Views/Shared/AuthorsDisplaying.cshtml",result);
+            return PartialView("~/Views/Shared/AuthorsDisplaying.cshtml", result);
         }
 
         [HttpGet]
         public PartialViewResult GetAuthor() {
             var author = _authorService.FindAuthorById(1);
             var result = Mapper.Map<AuthorViewModel>(author);
-            return PartialView("/Views/Shared/AuthorViewModelDisplaying.cshtml",result);
+            return PartialView("/Views/Shared/AuthorViewModelDisplaying.cshtml", result);
+        }
+
+        [HttpGet]
+        public PartialViewResult GetAuthorByPredicate() {
+            var author = _authorService.FindAuthorsBy(x => x.Id == 1);
+            var result = Mapper.Map<AuthorViewModel>(author);
+            return PartialView("/Views/Shared/AuthorViewModelDisplaying.cshtml", result);
         }
     }
 }

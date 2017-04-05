@@ -30,7 +30,9 @@ namespace BookStore.Business.Services
 
         public BookDto FindBookById(int id)
         {
-            return Mapper.Map<BookDto>(_bookStoreUow.BookRepository.GetElementById(id));
+            var book = _bookStoreUow.BookRepository.GetElementById(id);
+            var result = Mapper.Map<BookDto>(book);
+            return result;
         }
     }
 }

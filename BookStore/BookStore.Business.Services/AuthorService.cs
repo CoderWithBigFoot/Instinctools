@@ -18,7 +18,7 @@ namespace BookStore.Business.Services
         }
 
         public IEnumerable<AuthorDto> GetAllAuthors()
-        {
+        { 
             return Mapper.Map<IEnumerable<AuthorDto>>(_bookStoreUow.AuthorRepository.GetAll());
         }
 
@@ -31,8 +31,6 @@ namespace BookStore.Business.Services
         public AuthorDto FindAuthorById(int id)
         {
             var author = _bookStoreUow.AuthorRepository.GetElementById(id);
-            List<int> a = new List<int>();
-
             return Mapper.Map<AuthorDto>(author);
         }
     }

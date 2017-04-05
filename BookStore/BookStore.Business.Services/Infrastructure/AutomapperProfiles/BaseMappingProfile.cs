@@ -12,6 +12,7 @@ namespace BookStore.Business.Services.Infrastructure.AutomapperProfiles
             CreateMap<Author, AuthorDto>();
             CreateMap<Book, BookDto>();
             CreateMap<Func<AuthorDto, bool>, Func<Author, bool>>();
+            
         }
     }
 }

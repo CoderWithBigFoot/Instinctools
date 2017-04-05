@@ -232,10 +232,6 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BookStore.Business.Services\BookStore.Business.Services.csproj">
-      <Project>{ec34064f-08ed-47d0-882a-455a7f21ff1c}</Project>
-      <Name>BookStore.Business.Services</Name>
-    </ProjectReference>
     <ProjectReference Include="..\BookStore.Business\BookStore.Business.csproj">
       <Project>{c08dce29-b09c-4377-bc05-d14bc403c71d}</Project>
       <Name>BookStore.Business</Name>

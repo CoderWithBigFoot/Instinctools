@@ -56,8 +56,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AuthorService.cs" />
-    <Compile Include="BookService.cs" />
     <Compile Include="Infrastructure\AutomapperProfiles\BaseMappingProfile.cs" />
     <Compile Include="Infrastructure\NinjectModules\ServiceBindingModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

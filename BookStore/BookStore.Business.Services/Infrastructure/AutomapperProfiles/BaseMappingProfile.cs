@@ -1,6 +1,6 @@
 ﻿using System;
 using BookStore.Business.Dto;
-using BookStore.Data.EntityFramework.Entities;
+using BookStore.Data.Entities;
 using AutoMapper;
 
 namespace BookStore.Business.Services.Infrastructure.AutomapperProfiles

@@ -54,12 +54,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\BookStore.Data.EntityFramework\BookStore.Data.EntityFramework.csproj">
-      <Project>{77bebff9-6b25-4999-a333-8cb5e74b2b82}</Project>
-      <Name>BookStore.Data.EntityFramework</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

@@ -53,8 +53,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="IAuthor.cs" />
-    <Compile Include="IBook.cs" />
+    <Compile Include="BookStoreUow.cs" />
+    <Compile Include="Contexts\BookStoreContext.cs" />
+    <Compile Include="Entities\Author.cs" />
+    <Compile Include="Entities\Book.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

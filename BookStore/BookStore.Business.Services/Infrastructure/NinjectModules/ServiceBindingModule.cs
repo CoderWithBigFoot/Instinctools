@@ -1,4 +1,5 @@
 ﻿using Ninject.Modules;
+using BookStore.Business;
 
 namespace BookStore.Business.Services.Infrastructure.NinjectModules
 {

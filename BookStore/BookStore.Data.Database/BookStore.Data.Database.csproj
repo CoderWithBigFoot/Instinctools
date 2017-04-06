@@ -4,11 +4,11 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{77BEBFF9-6B25-4999-A333-8CB5E74B2B82}</ProjectGuid>
+    <ProjectGuid>{35DFD255-28EA-4F65-9805-4461D95B841F}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>BookStore.Data.EntityFramework</RootNamespace>
-    <AssemblyName>BookStore.Data.EntityFramework</AssemblyName>
+    <RootNamespace>BookStore.Data.Database</RootNamespace>
+    <AssemblyName>BookStore.Data.Database</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -45,21 +45,12 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
-    <Reference Include="ZKorsakas.Data">
-      <HintPath>..\..\InstinctoolsProj_2\ZKorsakas.Data.EntityFramework\bin\Debug\ZKorsakas.Data.dll</HintPath>
-    </Reference>
-    <Reference Include="ZKorsakas.Data.EntityFramework">
-      <HintPath>..\..\InstinctoolsProj_2\ZKorsakas.Data.EntityFramework\bin\Debug\ZKorsakas.Data.EntityFramework.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookStoreUow.cs" />
-    <Compile Include="Contexts\BookStoreContext.cs" />
-    <Compile Include="Entities\Author.cs" />
-    <Compile Include="Entities\Book.cs" />
-    <Compile Include="Migrations\201704041032447_Init.cs" />
-    <Compile Include="Migrations\201704041032447_Init.Designer.cs">
-      <DependentUpon>201704041032447_Init.cs</DependentUpon>
+    <Compile Include="BookStoreContextInit.cs" />
+    <Compile Include="Migrations\201704051044202_InitDatabase.cs" />
+    <Compile Include="Migrations\201704051044202_InitDatabase.Designer.cs">
+      <DependentUpon>201704051044202_InitDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,8 +66,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704041032447_Init.resx">
-      <DependentUpon>201704041032447_Init.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704051044202_InitDatabase.resx">
+      <DependentUpon>201704051044202_InitDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

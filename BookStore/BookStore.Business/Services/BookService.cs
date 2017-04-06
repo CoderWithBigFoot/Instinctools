@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
-using BookStore.Data.EntityFramework;
-using BookStore.Data.EntityFramework.Entities;
-using BookStore.Data.EntityFramework.Contexts;
 using BookStore.Business.Dto;
+using BookStore.Data;
+using BookStore.Data.Contexts;
+using BookStore.Data.Entities;
 using AutoMapper;
 
 namespace BookStore.Business.Services

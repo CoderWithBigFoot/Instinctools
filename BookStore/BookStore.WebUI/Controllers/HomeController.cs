@@ -46,5 +46,20 @@ namespace BookStore.WebUI.Controllers
             var result = Mapper.Map<AuthorViewModel>(author);
             return PartialView("/Views/Shared/AuthorViewModelDisplaying.cshtml", result);
         }
+
+        [HttpGet]
+        public PartialViewResult GetBooks()
+        {
+            List<BookViewModel> books = new List<BookViewModel>() {
+                new BookViewModel{
+                    Id = 1,
+                    Author = new AuthorViewModel{ Id = 1,Name = "Zheka",Surname = "Korsakas"},
+                    Name = "First book",
+                    Pages = 123
+                }
+            };
+
+            return PartialView("~/Views/Shared/BooksViewModelsDisplaying.cshtml",books);
+        }
     }
 }

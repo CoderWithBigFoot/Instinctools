@@ -10,7 +10,7 @@ namespace BookStore.WebUI.App_Start
     using Ninject;
     using Ninject.Modules;
     using Ninject.Web.Common;
-    using BookStore.Business.Services.Infrastructure.NinjectModules;
+    using BookStore.Business.Infrastructure.NinjectModules;
 
     public static class NinjectWebCommon 
     {

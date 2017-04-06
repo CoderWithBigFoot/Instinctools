@@ -1,8 +1,8 @@
 ﻿using System.Data.Entity;
 using ZKorsakas.Data.EntityFramework;
-using BookStore.Data.EntityFramework.Entities;
+using BookStore.Data.Entities;
 
-namespace BookStore.Data.EntityFramework
+namespace BookStore.Data
 {
     public class BookStoreUow : UnitOfWork
     {

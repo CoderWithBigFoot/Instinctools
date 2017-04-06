@@ -2,7 +2,7 @@
 using System.Web.Optimization;
 using System.Web.Routing;
 using AutoMapper;
-using BookStore.Business.Services.Infrastructure.AutomapperProfiles;
+using BookStore.Business.Infrastructure.AutomapperProfiles;
 using BookStore.WebUI.Infrastructure.AutomapperProfiles;
 
 namespace BookStore.WebUI

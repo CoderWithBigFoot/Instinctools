@@ -8,30 +8,45 @@
 <html>
 <head>
     <meta name="viewport" content="width=device-width" />
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
     <title>Index</title>
 
     <style>
         a {
             text-decoration:none;
         }
-        table, td, th {
-            border: 1px solid black;
+        table tr {
+            text-align:center;
         }
-        table {
-            border-collapse:collapse;
+        table th {
+            text-align:center;
         }
+        #authors {
+            margin: 30px;   
+        }
+        #books {
+            margin: 30px;
+        }
+        
         </style>
 
 </head>
 <body>
    <h1>Here is from index.cshtml</h1>
 
-    @Ajax.ActionLink("Get authors","GetAuthors",new AjaxOptions {
-        UpdateTargetId = "authors"
+    @Ajax.ActionLink("Get books","GetBooks",new AjaxOptions {
+    UpdateTargetId = "books"
 })
 
     <div id="authors">
         </div>
+    <br>
+    <div id="books" class="container">
+        </div>
+
+    
+
+
 
     <script src="~/Scripts/jquery-1.10.2.min.js"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>

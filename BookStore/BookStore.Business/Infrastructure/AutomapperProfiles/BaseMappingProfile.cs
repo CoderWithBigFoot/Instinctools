@@ -1,9 +1,8 @@
-﻿using System;
-using BookStore.Business.Dto;
+﻿using BookStore.Business.Dto;
 using BookStore.Data.Entities;
 using AutoMapper;
 
-namespace BookStore.Business.Services.Infrastructure.AutomapperProfiles
+namespace BookStore.Business.Infrastructure.AutomapperProfiles
 {
     public class BaseMappingProfile : Profile
     {
@@ -11,8 +10,6 @@ namespace BookStore.Business.Services.Infrastructure.AutomapperProfiles
         {
             CreateMap<Author, AuthorDto>();
             CreateMap<Book, BookDto>();
-            CreateMap<Func<AuthorDto, bool>, Func<Author, bool>>();
-            
         }
     }
 }

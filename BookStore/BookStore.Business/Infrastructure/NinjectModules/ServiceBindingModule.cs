@@ -1,7 +1,7 @@
 ﻿using Ninject.Modules;
-using BookStore.Business;
+using BookStore.Business.Services;
 
-namespace BookStore.Business.Services.Infrastructure.NinjectModules
+namespace BookStore.Business.Infrastructure.NinjectModules
 {
     public class ServiceBindingModule : NinjectModule
     {

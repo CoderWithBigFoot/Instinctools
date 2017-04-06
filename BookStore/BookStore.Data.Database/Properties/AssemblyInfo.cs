@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("BookStore.Data.EntityFramework")]
+[assembly: AssemblyTitle("BookStore.Data.Database")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
-[assembly: AssemblyProduct("BookStore.Data.EntityFramework")]
+[assembly: AssemblyProduct("BookStore.Data.Database")]
 [assembly: AssemblyCopyright("Copyright ©  2017")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("77bebff9-6b25-4999-a333-8cb5e74b2b82")]
+[assembly: Guid("35dfd255-28ea-4f65-9805-4461d95b841f")]
 
 // Version information for an assembly consists of the following four values:
 //

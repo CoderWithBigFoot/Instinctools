@@ -7,13 +7,13 @@ namespace BookStore.Data.Database.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class InitDatabase : IMigrationMetadata
+    public sealed partial class initDatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitDatabase));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(initDatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "201704051044202_InitDatabase"; }
+            get { return "201704061431003_initDatabase"; }
         }
         
         string IMigrationMetadata.Source

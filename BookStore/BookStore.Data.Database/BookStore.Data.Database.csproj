@@ -45,12 +45,20 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Xml" />
+    <Reference Include="ZKorsakas.Data, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\InstinctoolsProj_2\ZKorsakas.Data.EntityFramework\bin\Debug\ZKorsakas.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="ZKorsakas.Data.EntityFramework, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\InstinctoolsProj_2\ZKorsakas.Data.EntityFramework\bin\Debug\ZKorsakas.Data.EntityFramework.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookStoreContextInit.cs" />
-    <Compile Include="Migrations\201704051044202_InitDatabase.cs" />
-    <Compile Include="Migrations\201704051044202_InitDatabase.Designer.cs">
-      <DependentUpon>201704051044202_InitDatabase.cs</DependentUpon>
+    <Compile Include="BookStoreDbManagerContext.cs" />
+    <Compile Include="Migrations\201704061431003_initDatabase.cs" />
+    <Compile Include="Migrations\201704061431003_initDatabase.Designer.cs">
+      <DependentUpon>201704061431003_initDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -66,8 +74,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704051044202_InitDatabase.resx">
-      <DependentUpon>201704051044202_InitDatabase.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704061431003_initDatabase.resx">
+      <DependentUpon>201704061431003_initDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -3,7 +3,6 @@ using ZKorsakas.Data.EntityFramework;
 
 namespace BookStore.Data.Entities
 {
-    [Table("Book")]
     public class Book : Entity
     {
         public string Name { set; get; }   

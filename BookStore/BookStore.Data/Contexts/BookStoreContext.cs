@@ -7,7 +7,12 @@ namespace BookStore.Data.Contexts
     {
         public BookStoreContext(string connectionString) : base(connectionString) { }
 
-        public DbSet<Book> Books { set; get; }
-        public DbSet<Author> Authors { set; get; }
+        public virtual DbSet<Book> Books { set; get; }
+        public virtual DbSet<Author> Authors { set; get; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }

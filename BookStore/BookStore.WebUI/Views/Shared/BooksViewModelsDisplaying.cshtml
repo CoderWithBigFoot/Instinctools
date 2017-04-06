@@ -1,0 +1,28 @@
+﻿@using BookStore.WebUI.Models
+@model IEnumerable<BookViewModel>
+
+
+<div class="container">
+    <h3>Books info</h3>
+    <table class="table table-bordered table-hover">
+        <thead>
+            <tr class="success">
+                <th>Id</th>
+                <th>Name</th>
+                <th>Number of pages</th>
+                <th>Author</th>
+            </tr>
+        </thead>
+        <tbody>
+           @foreach (var book in Model)
+           {
+            <tr>
+                <td>@book.Id</td>
+                <td>@book.Name</td>
+                <td>@book.Pages</td>
+                <td><a href="#">@book.Author.Name @book.Author.Surname</a></td>
+            </tr>
+           }
+        </tbody>
+    </table>
+</div>

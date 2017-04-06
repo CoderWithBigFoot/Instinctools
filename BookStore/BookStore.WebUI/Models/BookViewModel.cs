@@ -14,5 +14,7 @@ namespace BookStore.WebUI.Models
         [Required]
         [Range(1,int.MaxValue)]
         public int Pages { set; get; }
+
+        public AuthorViewModel Author { set; get; }
     }
 }

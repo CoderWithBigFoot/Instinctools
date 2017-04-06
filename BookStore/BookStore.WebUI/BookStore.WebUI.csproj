@@ -212,6 +212,7 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\AuthorsDisplaying.cshtml" />
     <Content Include="Views\Shared\AuthorViewModelDisplaying.cshtml" />
+    <Content Include="Views\Shared\BooksViewModelsDisplaying.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

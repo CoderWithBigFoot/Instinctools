@@ -19,7 +19,5 @@ namespace BookStore.Data.EntityFramework
         public Repository<Book, DbContext> BookRepository => _booksRepository ?? (_booksRepository = new Repository<Book, DbContext>(_context));
 
         public Repository<Author, DbContext> AuthorRepository => _authorRepository ?? (_authorRepository = new Repository<Author, DbContext>(_context));
-        
-
     }
 }

@@ -1,0 +1,24 @@
+﻿@using BookStore.WebUI.Models
+@model IEnumerable<AuthorViewModel>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Surname</th>
+            </tr>
+        </thead>
+        <tbody>
+        
+        @foreach (var author in Model)
+        {
+               <tr>
+                   <td>@author.Id</td>
+                   <td>@author.Name</td>
+                   <td>@author.Surname</td>
+               </tr>
+        }
+        
+        </tbody>
+    </table>

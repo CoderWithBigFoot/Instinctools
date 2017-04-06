@@ -11,14 +11,6 @@ namespace BookStore.Data.Database
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Book>()
-                .HasKey(x => x.Id)
-                .HasRequired(x => x.Author)
-                .WithMany(x => x.Books);
-
-            modelBuilder.Entity<Author>()
-                .HasKey(x => x.Id);
-
             base.OnModelCreating(modelBuilder);
         }
     }

@@ -13,7 +13,8 @@
 
     <style>
         a {
-            text-decoration:none;
+            text-decoration: none;
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
         }
         table tr {
             text-align:center;
@@ -27,23 +28,32 @@
         #books {
             margin: 30px;
         }
-        
+
+        .route-link {
+            font-size:large;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+        }
+        .center {
+            margin-left:20%;
+            margin-right:20%;
+        }
         </style>
 
 </head>
 <body>
-   <h1>Here is from index.cshtml</h1>
+<br>
 
-    @Ajax.ActionLink("Get books","GetBooks",new AjaxOptions {
-    UpdateTargetId = "books"
-})
-
-    <div id="authors">
+    <div class="center">
+        <div class="container">
+    @Ajax.RouteLink("Get books", new { controller = "Home", action = "GetBooks" }, new AjaxOptions
+  {
+      UpdateTargetId = "books"
+  }, new { @class = "route-link" })
+            </div>
+        <div id="books" class="container">
+     
         </div>
-    <br>
-    <div id="books" class="container">
-        </div>
-
+    </div>
     
 
 

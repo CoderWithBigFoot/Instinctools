@@ -4,7 +4,6 @@ using ZKorsakas.Data.EntityFramework;
 
 namespace BookStore.Data.Entities
 {
-    [Table("Author")]
     public class Author : Entity
     {
         public string Name { set; get; }

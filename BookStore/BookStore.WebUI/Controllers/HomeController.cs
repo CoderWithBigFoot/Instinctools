@@ -40,8 +40,7 @@ namespace BookStore.WebUI.Controllers
                 {                    
                     author = _authorService.FindAuthorById(authorsIdCollection[i]);
                     result[i].Author = Mapper.Map<AuthorViewModel>(author);                 
-                }
-                
+                }          
             }
             return PartialView("~/Views/Shared/BooksViewModelsDisplaying.cshtml",result);
         }

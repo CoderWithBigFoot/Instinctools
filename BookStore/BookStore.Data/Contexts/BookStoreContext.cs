@@ -10,6 +10,7 @@ namespace BookStore.Data.Contexts
         public virtual DbSet<Book> Books { set; get; }
         public virtual DbSet<Author> Authors { set; get; }
 
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder.Entity<Book>()

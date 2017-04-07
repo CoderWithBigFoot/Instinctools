@@ -19,8 +19,8 @@ namespace BookStore.Business.Services
 
         public IEnumerable<BookDto> GetAllBooks()
         {
-            var result = Mapper.Map<IEnumerable<BookDto>>(_bookStoreUow.BookRepository.GetAll());
-            return result;
+            var result = _bookStoreUow.BookRepository.GetAll();
+            return Mapper.Map<IEnumerable<BookDto>>(result);
         }
 
         public IEnumerable<BookDto> FindBooksBy(Func<BookDto, bool> predicate)

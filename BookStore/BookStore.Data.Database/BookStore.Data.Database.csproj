@@ -47,7 +47,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BookStoreContextInit.cs" />
+    <Compile Include="BookStoreDbManagerContext.cs" />
     <Compile Include="Migrations\201704051044202_InitDatabase.cs" />
     <Compile Include="Migrations\201704051044202_InitDatabase.Designer.cs">
       <DependentUpon>201704051044202_InitDatabase.cs</DependentUpon>

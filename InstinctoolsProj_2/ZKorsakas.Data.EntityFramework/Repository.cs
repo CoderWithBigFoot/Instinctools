@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Linq;
 using System.Data.Entity;
+using AutoMapper;
 
 namespace ZKorsakas.Data.EntityFramework
 {

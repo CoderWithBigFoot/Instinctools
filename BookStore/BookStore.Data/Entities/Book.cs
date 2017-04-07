@@ -8,7 +8,7 @@ namespace BookStore.Data.Entities
         public string Name { set; get; }   
         public int Pages { set; get; }
         
-        public int AuthorId { protected set; get; }
+        public int AuthorId { set; get; }
 
         [ForeignKey("AuthorId")]
         public virtual Author Author { set; get; }

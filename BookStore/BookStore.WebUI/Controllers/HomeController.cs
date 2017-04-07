@@ -4,6 +4,7 @@ using BookStore.Business;
 using BookStore.WebUI.Models;
 using BookStore.Business.Dto;
 using AutoMapper;
+using System.Linq;
 using AutoMapper.XpressionMapper;
 
 namespace BookStore.WebUI.Controllers
@@ -26,40 +27,25 @@ namespace BookStore.WebUI.Controllers
 
 
 
-        [HttpGet]
-        public PartialViewResult GetAuthors() {
-            var authorsCollection = _authorService.GetAllAuthors();
-            var result = Mapper.Map<IEnumerable<AuthorViewModel>>(authorsCollection);
-            return PartialView("~/Views/Shared/AuthorsDisplaying.cshtml", result);
-        }
-
-        [HttpGet]
-        public PartialViewResult GetAuthor() {
-            var author = _authorService.FindAuthorById(1);
-            var result = Mapper.Map<AuthorViewModel>(author);
-            return PartialView("/Views/Shared/AuthorViewModelDisplaying.cshtml", result);
-        }
-
-        [HttpGet]
-        public PartialViewResult GetAuthorByPredicate() {
-            var author = _authorService.FindAuthorsBy(x => x.Id == 1);
-            var result = Mapper.Map<AuthorViewModel>(author);
-            return PartialView("/Views/Shared/AuthorViewModelDisplaying.cshtml", result);
-        }
 
         [HttpGet]
         public PartialViewResult GetBooks()
         {
-            List<BookViewModel> books = new List<BookViewModel>() {
-                new BookViewModel{
-                    Id = 1,
-                    Author = new AuthorViewModel{ Id = 1,Name = "Zheka",Surname = "Korsakas"},
-                    Name = "First book",
-                    Pages = 123
-                }
-            };
+            var allBooks = _bookService.GetAllBooks();
+            var result = Mapper.Map<IEnumerable<BookViewModel>>(allBooks).ToList();
+            var authorsIdCollection = allBooks.Select(x => x.AuthorId).ToList();
+            AuthorDto author = null;
 
-            return PartialView("~/Views/Shared/BooksViewModelsDisplaying.cshtml",books);
+            if (result != null)
+            {
+                for (var i = 0; i < result.Count(); i++)
+                {
+                    author = _authorService.FindAuthorById(authorsIdCollection[i]);
+                    result[i].Author = Mapper.Map<AuthorViewModel>(author);
+                }
+
+            }
+            return PartialView("~/Views/Shared/BooksViewModelsDisplaying.cshtml", result);
         }
     }
 }

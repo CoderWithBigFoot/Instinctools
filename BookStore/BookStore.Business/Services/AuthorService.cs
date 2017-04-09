@@ -12,9 +12,9 @@ namespace BookStore.Business.Services
     {
         protected BookStoreUow _bookStoreUow;
 
-        public AuthorService(string connectionString)
+        public AuthorService(BookStoreContext context)
         {
-            _bookStoreUow = new BookStoreUow(new BookStoreContext(connectionString));
+            _bookStoreUow = new BookStoreUow(context);
         }
 
         public IEnumerable<AuthorDto> GetAllAuthors()

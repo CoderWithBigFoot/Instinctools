@@ -1,5 +1,6 @@
 ﻿using Ninject.Modules;
 using BookStore.Business.Services;
+using BookStore.Data.Contexts;
 
 namespace BookStore.Business.Infrastructure.NinjectModules
 {
@@ -14,8 +15,8 @@ namespace BookStore.Business.Infrastructure.NinjectModules
 
         public override void Load()
         {
-            Bind<IAuthorService>().To<AuthorService>().WithConstructorArgument("connectionString", _connectionString);
-            Bind<IBookService>().To<BookService>().WithConstructorArgument("connectionString", _connectionString);
+            Bind<IAuthorService>().To<AuthorService>().WithConstructorArgument("context", new BookStoreContext(_connectionString));
+            Bind<IBookService>().To<BookService>().WithConstructorArgument("context", new BookStoreContext(_connectionString));
         }
     }
 }

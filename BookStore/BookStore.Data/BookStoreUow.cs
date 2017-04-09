@@ -6,7 +6,7 @@ namespace BookStore.Data
 {
     public class BookStoreUow : UnitOfWork
     {
-        protected DbContext _context;
+        private DbContext _context;
 
         protected Repository<Book, DbContext> _booksRepository;
         protected Repository<Author, DbContext> _authorRepository;

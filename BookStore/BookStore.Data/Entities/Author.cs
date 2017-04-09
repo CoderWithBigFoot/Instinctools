@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations.Schema;
 using ZKorsakas.Data.EntityFramework;
 
 namespace BookStore.Data.Entities

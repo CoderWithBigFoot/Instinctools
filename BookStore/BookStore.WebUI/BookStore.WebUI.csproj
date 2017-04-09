@@ -164,6 +164,7 @@
     <Compile Include="App_Start\NinjectWebCommon.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TestController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -213,6 +214,9 @@
     <Content Include="Views\Shared\AuthorsDisplaying.cshtml" />
     <Content Include="Views\Shared\AuthorViewModelDisplaying.cshtml" />
     <Content Include="Views\Shared\BooksViewModelsDisplaying.cshtml" />
+    <Content Include="Views\Test\Index.cshtml" />
+    <Content Include="Views\Shared\PartialTestView.cshtml" />
+    <Content Include="Views\Test\GetInfo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

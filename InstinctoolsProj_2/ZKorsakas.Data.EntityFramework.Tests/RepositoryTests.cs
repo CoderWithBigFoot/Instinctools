@@ -9,7 +9,6 @@ using ZKorsakas.Data.EntityFramework.Tests.Models;
 using ZKorsakas.Data.EntityFramework.Tests.Helpers;
 using ZKorsakas.Data.EntityFramework.Tests.ProviderFactories;
 
-
 namespace ZKorsakas.Data.EntityFramework.Tests
 {
     [TestClass]
